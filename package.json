@@ -8,6 +8,7 @@
     "start": "nodemon src/server.ts",
     "build": "rimraf dist && tsc",
     "ts.check": "tsc --project tsconfig.json",
+    "pro": "ts-node-dev --respawn --transpile-only src/server.ts",
     "add-build": "git add dist"
   },
   "pre-commit": [
