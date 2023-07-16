@@ -102,7 +102,7 @@ const adminLoginService = (payload) => __awaiter(void 0, void 0, void 0, functio
     if (!isExist) {
         throw new ApiError_1.default(http_status_1.default.NOT_FOUND, "This user not found");
     }
-    if (isExist.role !== "Admin") {
+    if (isExist.role !== "admin") {
         throw new ApiError_1.default(http_status_1.default.FORBIDDEN, "Only admin approved");
     }
     //match password
@@ -123,7 +123,7 @@ const adminCreateService = (payload) => __awaiter(void 0, void 0, void 0, functi
     if (!payload.password) {
         payload.password = config_1.default.user_pass;
     }
-    if (payload.role !== "Admin") {
+    if (payload.role !== "admin") {
         throw new ApiError_1.default(http_status_1.default.FORBIDDEN, "Must have role & role must be admin");
     }
     const isPhoneUnique = yield users_model_1.User.findOne({

@@ -10,7 +10,7 @@ const checkEligibleOrder = () => async (req:Request, res:Response, next:NextFunc
 		const isCowAvailable = await Cow.findById(req.body.cow);
         req.body.balance = isBuyerEligible?.budget 
         req.body.price = isCowAvailable?.price
-		if (isBuyerEligible && isCowAvailable && isBuyerEligible?.budget >= isCowAvailable?.price && isBuyerEligible?.role === 'Buyer') {
+		if (isBuyerEligible && isCowAvailable && isBuyerEligible?.budget >= isCowAvailable?.price && isBuyerEligible?.role === 'buyer') {
             const balance = isBuyerEligible?.budget
             const price = isCowAvailable?.price
 			next();

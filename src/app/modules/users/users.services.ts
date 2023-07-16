@@ -145,7 +145,7 @@ const adminLoginService = async (
   if (!isExist) {
     throw new ApiError(httpStatus.NOT_FOUND, "This user not found");
   }
-  if (isExist.role !== "Admin") {
+  if (isExist.role !== "admin") {
     throw new ApiError(httpStatus.FORBIDDEN, "Only admin approved");
   }
 
@@ -185,7 +185,7 @@ const adminCreateService = async (
     payload.password = config.user_pass as string;
   }
 
-  if (payload.role !== "Admin") {
+  if (payload.role !== "admin") {
     throw new ApiError(
       httpStatus.FORBIDDEN,
       "Must have role & role must be admin"

@@ -17,7 +17,7 @@ const checkEligibleOrder = () => (req, res, next) => __awaiter(void 0, void 0, v
         const isCowAvailable = yield cows_model_1.Cow.findById(req.body.cow);
         req.body.balance = isBuyerEligible === null || isBuyerEligible === void 0 ? void 0 : isBuyerEligible.budget;
         req.body.price = isCowAvailable === null || isCowAvailable === void 0 ? void 0 : isCowAvailable.price;
-        if (isBuyerEligible && isCowAvailable && (isBuyerEligible === null || isBuyerEligible === void 0 ? void 0 : isBuyerEligible.budget) >= (isCowAvailable === null || isCowAvailable === void 0 ? void 0 : isCowAvailable.price) && (isBuyerEligible === null || isBuyerEligible === void 0 ? void 0 : isBuyerEligible.role) === 'Buyer') {
+        if (isBuyerEligible && isCowAvailable && (isBuyerEligible === null || isBuyerEligible === void 0 ? void 0 : isBuyerEligible.budget) >= (isCowAvailable === null || isCowAvailable === void 0 ? void 0 : isCowAvailable.price) && (isBuyerEligible === null || isBuyerEligible === void 0 ? void 0 : isBuyerEligible.role) === 'buyer') {
             const balance = isBuyerEligible === null || isBuyerEligible === void 0 ? void 0 : isBuyerEligible.budget;
             const price = isCowAvailable === null || isCowAvailable === void 0 ? void 0 : isCowAvailable.price;
             next();

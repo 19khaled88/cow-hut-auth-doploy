@@ -1,6 +1,6 @@
 import { Model } from "mongoose";
 
-export type Role = "Buyer" | "Seller" | "User" | "Admin" | "Super Admin";
+export type Role = "buyer" | "seller" | "user" | "admin" | "super admin";
 export type IUser = {
   // id:string
   phoneNumber: string;
